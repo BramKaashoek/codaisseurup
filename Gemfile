@@ -58,3 +58,12 @@ end
 group :test do
 	  gem 'capybara', '~> 2.9', '>= 2.9.1'
 end
+
+#add Bootstrap for styling
+gem 'bootstrap-sass', '~> 3.3.6'
+
+
+# Use Devise for authentication
+gem 'devise', '~> 4.2'
+
+gem 'jquery-rails'
