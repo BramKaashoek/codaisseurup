@@ -8,6 +8,8 @@ class Event < ApplicationRecord
 
   def end_date_more_than_1_day_after_start_date?
     starts_at + 1.days >= ends_at
+
   end
+
 
 end
