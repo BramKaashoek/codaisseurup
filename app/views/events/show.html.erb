@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+  <div class="panel-heading"><%= @event.name %></div>
+
+  <div class="panel-body">
+
+
+    <!-- Main Info -->
+    <h4>Event Information</h4>
+    <p><%= @event.name %></p>
+    <p><%= @event.description %></p>
+
+    <!-- About -->
+    <h4>About</h4>
+    <p><%= @event.description %></p>
+
+    <!-- Amenities -->
+    <h4>Free shit</h4>
+    <ul class="amenities">
+      <li><%= !@event.includes_drinks ? ("<s>Free drinks</s>").html_safe : "Free drinks" %></li>
+      <li><%= !@event.includes_food ? ("<s>Free food</s>").html_safe : "Free food" %></li>
+    </ul>
+
+  </div>
+
+</div>
+
+<%= link_to "Back", events_path, class: "btn btn-default" %>
