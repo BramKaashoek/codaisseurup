@@ -25,8 +25,8 @@ class EventsController < ApplicationController
   end
 
   def update
-    if @room.update()
-      redirect_to @room, notice: "Event succesfully upated."
+    if @event.update(event_params)
+      redirect_to @event, notice: "Event succesfully upated."
     else
       render :edit
     end
