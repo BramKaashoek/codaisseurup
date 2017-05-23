@@ -6,14 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user1 = User.create!(email:"henk@jan.com", password:"1234" )
+user1 = User.create!(email:"henk@jan.com", password:"123456" )
 
-
-
-
-event.create!(
-name: "ballenbak"
-description: "lekker spelen"
-starts_at: DateTime.new(2017, 5, 17, 14)
-ends_at: DateTime.new(2017, 5, 18, 14, 1)
-  )
+Event.create!(
+name: "ballenbak",
+description: "lekker spelen",
+starts_at: DateTime.new(2017, 5, 17, 14),
+ends_at: DateTime.new(2017, 5, 18, 14, 1),
+user: user1)
