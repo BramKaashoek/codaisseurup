@@ -1,11 +1,12 @@
 FactoryGirl.define do
   factory :event do
-      name            { Faker::LeagueOfLegends.champion }
-      description     { Faker::Loren.Sentence(1) }
-      starts_at       { Faker::Time.between(4.days.ago, Date.today, :all)}
-      ends_at         { Faker::Time.between(1.day.ago, Date.today, :all)}
+      name            { Faker::Name.name }
+      description     { Faker::Lorem.sentence(1) }
+      starts_at       { Faker::Time.between(10.days.ago, 5.days.ago, :all)}
+      ends_at         { Faker::Time.between(3.day.ago, 1.days.ago, :all)}
       includes_food   false
       includes_drinks true
       active          true
+      user            { build :user }
   end
 end
