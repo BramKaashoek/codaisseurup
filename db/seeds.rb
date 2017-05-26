@@ -21,7 +21,7 @@ stom = Category.create!(name: "stom")
 leuk = Category.create!(name: "leuk")
 adult = Category.create!(name: "adult")
 
-Event.create!(
+event1 = Event.create!(
 name: "ballenbak",
 description: "lekker spelen",
 starts_at: DateTime.new(2017, 5, 17, 14),
@@ -30,7 +30,7 @@ user: user1,
 categories: [leuk, kinderachtig]
 )
 
-Event.create!(
+event2 = Event.create!(
 name: "fetish party",
 description: "lekker spelen",
 starts_at: DateTime.new(2017, 5, 17, 14),
@@ -39,7 +39,7 @@ user: user1,
 categories: [leuk, adult]
 )
 
-Event.create!(
+event3 = Event.create!(
 name: "wijn drinken",
 description: "HI HA HONDELUL",
 starts_at: DateTime.new(2017, 5, 17, 14),
@@ -47,3 +47,7 @@ ends_at: DateTime.new(2017, 5, 18, 14, 1),
 user: user1,
 categories: [leuk, adult]
 )
+
+Registration.create(event: event1, user: user1 , price: 50, status: true, guest_count: 3)
+Registration.create(event: event2, user: user1 , price: 25, status: true, guest_count: 1)
+Registration.create(event: event2, user: user2 , price: 25, status: true, guest_count: 2)

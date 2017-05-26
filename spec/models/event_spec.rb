@@ -44,4 +44,17 @@ RSpec.describe Event, type: :model do
       expect(Event.order_by_price).to match_array [event300, event100, event20, event10]
     end
   end
+
+  describe "association with registration" do
+    let(:guest_user) { create :user, email: "guest@user.com" }
+    let(:host_user) { create :user, email: "host@user.com" }
+
+    let!(:event) { create :event, user: host_user }
+    let!(:registration) { create :registration, event: event, user: guest_user }
+
+    it "has event guests" do
+      expect(event.guests).to include(guest.user)
+    end
+  end
+
 end
