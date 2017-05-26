@@ -27,6 +27,7 @@ description: "lekker spelen",
 starts_at: DateTime.new(2017, 5, 17, 14),
 ends_at: DateTime.new(2017, 5, 18, 14, 1),
 user: user1,
+price: 50,
 categories: [leuk, kinderachtig]
 )
 
@@ -36,6 +37,7 @@ description: "lekker spelen",
 starts_at: DateTime.new(2017, 5, 17, 14),
 ends_at: DateTime.new(2017, 5, 18, 14, 1),
 user: user1,
+price: 25,
 categories: [leuk, adult]
 )
 
@@ -44,10 +46,11 @@ name: "wijn drinken",
 description: "HI HA HONDELUL",
 starts_at: DateTime.new(2017, 5, 17, 14),
 ends_at: DateTime.new(2017, 5, 18, 14, 1),
-user: user1,
+user: user2,
+price:10,
 categories: [leuk, adult]
 )
 
-Registration.create(event: event1, user: user1 , price: 50, status: true, guest_count: 3)
-Registration.create(event: event2, user: user1 , price: 25, status: true, guest_count: 1)
-Registration.create(event: event2, user: user2 , price: 25, status: true, guest_count: 2)
+Registration.create(event: event1, user: user1, price: event1.price, status: true, guests_count: 3)
+Registration.create(event: event2, user: user1, price: event2.price, status: true, guests_count: 1)
+Registration.create(event: event2, user: user2, price: event2.price, status: true, guests_count: 2)
